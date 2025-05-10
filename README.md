@@ -44,7 +44,6 @@ A strategy for how API endpoints would be tested given the API was inaccessible.
 - Gherkin-style test definitions
 - Assumptions about endpoints
 - Expected responses and validation criteria
-- Mock Postman collection with placeholder endpoints
 
 Deliverables:
 
