@@ -1,6 +1,9 @@
 import { expect, request, test } from "@playwright/test";
 
+import fs from "fs";
 import { getAuthHeaders } from "../../utils/auth";
+
+const orderIds: string[] = [];
 
 test("PUT /ENSEK/buy/{id}/{quantity} should purchase units for each energy type", async () => {
   // Get authorization headers
@@ -34,5 +37,13 @@ test("PUT /ENSEK/buy/{id}/{quantity} should purchase units for each energy type"
     console.log(
       `Purchased ${purchaseQuantity} units of ${fuel} (ID ${energy_id}) → ${result}`
     );
+
+    const match = result.match(/order(?:\s|\\u00a0)?id(?: is)?[:\s]*([\w-]+)/i);
+    if (match) {
+      orderIds.push(match[1]);
+    }
   }
+
+  // Write once after all iterations
+  fs.writeFileSync("orderIds.json", JSON.stringify(orderIds, null, 2));
 });
