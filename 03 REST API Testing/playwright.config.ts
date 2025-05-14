@@ -11,7 +11,7 @@ export default defineConfig({
     },
     ignoreHTTPSErrors: true,
   },
-  reporter: [["html", { open: "never" }]],
+  reporter: [["html", { open: "always" }]],
   projects: [
     {
       name: "API",

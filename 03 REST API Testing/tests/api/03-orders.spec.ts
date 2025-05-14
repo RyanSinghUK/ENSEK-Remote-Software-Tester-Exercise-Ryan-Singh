@@ -17,9 +17,13 @@ test("GET /ENSEK/orders should include the recently purchased energy types", asy
   //console.log("Returned Orders:", orders);
 
   // Load the expected order IDs that were saved during the buy scenario
-  const expectedOrderIds: string[] = JSON.parse(
-    fs.readFileSync("orderIds.json", "utf-8")
-  );
+  let expectedOrderIds: string[] = [];
+  try {
+    expectedOrderIds = JSON.parse(fs.readFileSync("orderIds.json", "utf-8"));
+  } catch (err) {
+    console.error("❌ Failed to parse orderIds.json:", err.message);
+    throw err;
+  }
   console.log("Expected Order IDs:", expectedOrderIds);
   console.log(
     "Verifying that expected Order IDs are present in the returned orders..."

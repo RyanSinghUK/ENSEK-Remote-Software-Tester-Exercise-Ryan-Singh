@@ -23,3 +23,8 @@ playwright-report/
 
 # Python cache (if ever used)
 __pycache__/
+
+# Temporary test artifact generated during API test runs
+# Contains order IDs created by buy.spec.ts and used by orders.spec.ts
+# Expected to exist locally only to avoid clash between buy.spec.ts and orders.spec.ts execution
+orderIds.json
