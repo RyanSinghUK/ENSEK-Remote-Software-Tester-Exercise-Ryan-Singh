@@ -1,6 +1,12 @@
 # ENSEK Remote Software Tester Exercise – Ryan Singh
 
+✅ Continuous Integration
+
+All REST API tests are automatically executed on-demand via GitHub Actions.
+
 [![Run ENSEK API Tests](https://github.com/RyanSinghUK/ENSEK-Remote-Software-Tester-Exercise-Ryan-Singh/actions/workflows/playwright.yml/badge.svg)](https://github.com/RyanSinghUK/ENSEK-Remote-Software-Tester-Exercise-Ryan-Singh/actions/workflows/playwright.yml)
+
+To trigger a test run manually, use the **"Run workflow"** button on the Actions tab.
 
 This repository contains the completed submission for the ENSEK QA Engineer technical test. It is structured into three focused sections, each documented and packaged for review.
 
@@ -55,6 +61,8 @@ A fully implemented Playwright-based test automation framework designed to valid
 - HTML reporting integrated and exported for CI review
 
 Tests can be executed locally or via the GitHub Actions CI pipeline.
+
+Test artifacts, including the HTML report, are downloadable post-run.
 
 Deliverables:
 
