@@ -1,4 +1,6 @@
-# ENSEK QA Engineer Technical Test Submission
+# ENSEK Remote Software Tester Exercise – Ryan Singh
+
+[![Run ENSEK API Tests](https://github.com/RyanSinghUK/ENSEK-Remote-Software-Tester-Exercise-Ryan-Singh/actions/workflows/playwright.yml/badge.svg)](https://github.com/RyanSinghUK/ENSEK-Remote-Software-Tester-Exercise-Ryan-Singh/actions/workflows/playwright.yml)
 
 This repository contains the completed submission for the ENSEK QA Engineer technical test. It is structured into three focused sections, each documented and packaged for review.
 
