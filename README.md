@@ -41,19 +41,22 @@ Deliverables:
 
 ## 📁 Section 3: REST API Testing
 
-A strategy for how API endpoints would be tested given the API was inaccessible. This section includes:
+A fully implemented Playwright-based test automation framework designed to validate the REST API exposed by ENSEK. This framework includes:
 
-- Gherkin-style test definitions
-- Assumptions about endpoints
-- Expected responses and validation criteria
+- Token-based authentication and request context management
+- End-to-end validation of core API scenarios:
+  - Resetting test data
+  - Purchasing all fuel types (Gas, Electric, Oil, Nuclear)
+  - Verifying orders are correctly listed
+  - Filtering orders created before the current date
+  - Validating deletion of specific orders
+- Shared utility functions and test data management (e.g. dynamic order ID storage)
+- Serial execution strategy for interdependent test flows
+- HTML reporting integrated and exported for CI review
+
+Tests can be executed locally or via the GitHub Actions CI pipeline.
 
 Deliverables:
 
-- `03 REST API Testing.pdf` – Automation Test Strategy, including mocked request and response payloads
-
----
-
-## Notes
-
-- Only `.pdf` files and the required assets are tracked in this repository. Source `.docx` files are excluded via `.gitignore` to reduce noise.
-- All work was completed independently and submitted in accordance with the provided brief.
+- `playwright-report/` – HTML Test Report
+- `tests/api/` – Playwright TypeScript API tests (version-controlled)
