@@ -25,7 +25,12 @@ export async function getAuthHeaders(): Promise<Record<string, string>> {
     );
   }
 
-  const token = await response.text();
+  const raw = await response.json();
+  console.log("LOGIN RESPONSE:", raw);
+  const token = raw.access_token;
+  console.log("HEADER:", {
+    Authorization: `Bearer ${token}`,
+  });
 
   // Return header object formatted for use in authenticated API requests
   return {
