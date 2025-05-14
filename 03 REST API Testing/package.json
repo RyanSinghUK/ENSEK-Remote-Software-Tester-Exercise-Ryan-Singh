@@ -4,13 +4,20 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
-    "lint": "npx eslint . --ext .ts"
+    "lint": "npx eslint . --ext .ts",
+    "report": "npx playwright show-report"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "playwright",
+    "api",
+    "typescript",
+    "testing"
+  ],
+  "author": "Ryan Singh",
   "license": "ISC",
-  "description": "",
+  "description": "Playwright-based REST API testing framework for ENSEK technical test",
   "devDependencies": {
+    "@playwright/test": "^1.52.0",
     "@types/node": "^22.15.18",
     "playwright": "^1.52.0",
     "ts-node": "^10.9.2",
