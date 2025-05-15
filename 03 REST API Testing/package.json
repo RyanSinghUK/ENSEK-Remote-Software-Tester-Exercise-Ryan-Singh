@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
-    "test:ordered": "rm -f orderIds.json && npx playwright test tests/api/00-smoke.spec.ts tests/api/01-reset.spec.ts tests/api/02-buy.spec.ts tests/api/03-orders.spec.ts tests/api/04-orders-before-current-date.spec.ts tests/api/05-validation-delete-order.spec.ts tests/api/06-auth-invalid-token.spec.ts --workers=1",
+    "test:ordered": "rm -f orderIds.json && npx playwright test tests/api/00-smoke.spec.ts tests/api/01-reset.spec.ts tests/api/02-buy.spec.ts tests/api/03-orders.spec.ts tests/api/04-orders-before-current-date.spec.ts tests/api/05-validation-delete-order.spec.ts tests/api/06-auth-invalid-token.spec.ts --workers=1 && cp -R playwright-report ENSEK-test-report && mv ENSEK-test-report/index.html ENSEK-test-report/ENSEK-Automation-Report.html",
     "lint": "npx eslint . --ext .ts",
     "report": "npx playwright show-report",
     "clean:testdata": "rm -f orderIds.json",

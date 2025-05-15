@@ -12,16 +12,16 @@ test("PUT /ENSEK/buy/{id}/{quantity} should purchase units for each energy type"
   // Create a request context using auth
   const context = await request.newContext({ extraHTTPHeaders: headers });
 
-  // Step 1: Get available energy types
+  // Get available energy types
   const energyResponse = await context.get("/ENSEK/energy");
   expect(energyResponse.ok()).toBeTruthy();
 
   const energyData = await energyResponse.json();
 
-  // Step 2: Define how many units to buy for each fuel type
+  // Define how many units to buy for each fuel type
   const purchaseQuantity = 5;
 
-  // Step 3: Iterate over each energy type and send a PUT request to buy units
+  // Iterate over each energy type and send a PUT request to buy units
   for (const [fuel, details] of Object.entries(energyData)) {
     const { energy_id } = details as { energy_id: string };
 
@@ -29,7 +29,7 @@ test("PUT /ENSEK/buy/{id}/{quantity} should purchase units for each energy type"
       `/ENSEK/buy/${energy_id}/${purchaseQuantity}`
     );
 
-    // Step 4: Validate each response is successful
+    // Validate each response is successful
     expect(buyResponse.ok()).toBeTruthy();
     expect(buyResponse.status()).toBe(200);
 
